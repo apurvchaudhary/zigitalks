@@ -1,0 +1,100 @@
+<html>
+    <head>
+        <marquee bgcolor="#F1C40F"><h3 style="font-family:chiller;font-size:22;font-style: oblique"> The team that built India's largest online income tax return filing website. We have also created one of the best workplaces in India, innovating and building high quality tax and tds filing software in India </h3></marquee>
+        <title>apurvcleartaxassigment.com</title>
+        <style>
+            fieldset{
+                color: aqua;
+            }
+           
+           .fieldSet
+{
+    width: 60%; 
+    margin-top: 50px;
+    margin-left: 250px;
+    margin-right: 250px;
+    border-color: #003366;
+}
+
+.legendStyle
+{
+    border-style:none;
+    background-color: #003366;
+    font-family: Tahoma, Arial, Helvetica;
+    font-weight: bold;
+    font-size: 9.5pt;
+    Color: White;
+    width:30%;
+    padding-left:10px;
+
+}
+            img{
+                margin-top: 10px;
+                margin-left: 50px;
+            }
+            
+            #footer {
+   position:fixed;
+   bottom:0;
+   width:100%;
+   height:40px;   
+   background:#6cf;
+}
+        </style>
+        <script type="text/javascript">
+            window.onload=function() {
+                endingObj = document.getElementById('txtEnding');
+                beginingObj = document.getElementById('txtBegining');
+                yearsObj = document.getElementById('txtYears');
+                cagrObj = document.getElementById('tdCagr');
+                document.getElementById('btnReset').onclick = resetInputs;
+                document.getElementById('btnCalc').onclick = calcCagr;
+            }
+            function resetInputs() {
+                endingObj.value = '';
+                beginingObj.value = '';
+                yearsObj.value='';
+                cagrObj.innerHTML = '';
+            }
+            function calcCagr() {
+                var ending = new Number(endingObj.value);
+                var begining = new Number(beginingObj.value);
+                var years= new Number(yearsObj.value);
+                cagrObj.innerHTML = '';
+                cagrObj.innerHTML =((Math.pow((ending/begining),(1/years))-1)*100).toFixed(2)+"%";
+                }
+        </script>
+    </head>
+    <body>
+        <img src="E:\cleartaxassignment\img1.png" alt="c" height="200" width="500">
+       <center> <H1>CAGR stands for<span style="color: red"> Compund Annual Growth Rate</span></H1></center>
+            <fieldset class="fieldset"><legend class="legendstyle">TRY OUR CAGR CALCULATOR </legend>
+                <center>
+        <table>
+            <tr>
+                <td><label for="txtBegining">INITIAL AMOUNT in Rs.</label></td>
+                <td><input type="text" id="txtBegining" /></td>
+            </tr>
+            <tr>
+                
+                <td><label for="txtEnding">ENDING AMOUNT in Rs.</label></td>
+                <td><input type="text" id="txtEnding" /></td>
+            </tr>
+            <tr>
+                <td><label for="txtYears">TIME PERIOD in YEARS</label></td>
+                <td><input type="text" id="txtYears" /></td>
+            </tr>
+            <tr>
+                <td style="color: red;font-family: arial black">CAGR %</td>
+                <td id="tdCagr"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button id="btnReset">Reset</button>&nbsp;&nbsp;&nbsp;<button id="btnCalc">Calculate</button></td>
+            </tr>
+                    </table></center></fieldset>
+        
+        <div id="footer" style="text-align:right;font-style:bold;font-family: chiller;font-size: 22">Save ENERGY , Save TIME we have more financial tools by TEAM cleartax(CAGR calculator Designed and Developed by Apurv Chaudhary(MCA)).......</div>
+        
+    </body>
+</html>
